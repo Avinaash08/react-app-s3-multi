@@ -2,7 +2,7 @@ name: main.yml
 
 on:
   pull_request:
-    types: [ assigned, opened, reopened ]
+    types: [ assigned, opened, reopened, labeled ]
   issue_comment:
     types: [created]
     branches: [ main ]
@@ -16,7 +16,7 @@ env:
 jobs:
   build:
     #if: github.event.pull_request.merged == true
-    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'issue_comment' && github.event.comment.body == '/Build Trigger') }}
+    if: ${{ github.event_name == 'pull_request' || github.event.label.name == 'Build Trigger' }}
     runs-on: ubuntu-latest
 
     strategy:
