@@ -2,7 +2,7 @@ name: main.yml
 
 on:
   pull_request:
-    types: [ opened, assigned, reopened, labeled ]
+    #types: [ opened, assigned, reopened, labeled ]
     branches: [ main ]
     
 env:
@@ -14,7 +14,7 @@ env:
 jobs:
   build:
     #if: github.event.pull_request.merged == true
-    if: github.event_name == 'pull_request' || github.event.label.name == 'enhancement'
+    #if: github.event_name == 'pull_request' || github.event.label.name == 'enhancement'
     runs-on: ubuntu-latest
 
     strategy:
