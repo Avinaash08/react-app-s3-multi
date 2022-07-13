@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header >
-       <Widget name="Service providers List - RCXN-7 Multi commit Test"/>
+       <Widget name="Service providers List - RCXN-7 Multi commit Test the "/>
       </header>
       
     </div>
