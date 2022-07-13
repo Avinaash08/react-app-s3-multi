@@ -14,7 +14,7 @@ env:
 jobs:
   build:
     #if: github.event.pull_request.merged == true
-    if: github.event_name == 'pull_request' && github.event.label.name == 'Build Trigger'
+    if: github.event_name == 'pull_request' || github.event.label.name == 'enhancement'
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,8 +23,6 @@ jobs:
         
     steps:
     - uses: actions/checkout@v3
-      with:
-        label: Build Trigger
 
     - name: Install dependencies
       run: npm install
