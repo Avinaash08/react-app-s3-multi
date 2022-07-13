@@ -2,9 +2,9 @@ name: main.yml
 
 on:
   pull_request:
-    types: [ assigned, opened, reopened, labeled ]
-  issue_comment:
-    types: [created]
+    types: [ opened, assigned, reopened ]
+  discussion:
+    types: [ labeled ]
     branches: [ main ]
     
 env:
