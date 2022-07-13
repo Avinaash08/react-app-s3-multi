@@ -2,9 +2,7 @@ name: main.yml
 
 on:
   pull_request:
-    types: [ opened, assigned, reopened ]
-  discussion:
-    types: [ labeled ]
+    types: [ opened, assigned, reopened, labeled ]
     branches: [ main ]
     
 env:
@@ -25,6 +23,8 @@ jobs:
         
     steps:
     - uses: actions/checkout@v3
+      with:
+        label: Build Trigger
 
     - name: Install dependencies
       run: npm install
